@@ -6,13 +6,13 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 13:39:47 by bguyot            #+#    #+#             */
-/*   Updated: 2022/02/27 14:04:24 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/02/27 14:58:12 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-int	ft_printf(const char *, ...);
+int	ft_printf(const char *str, ...);
 
 #endif
