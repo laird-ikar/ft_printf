@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:24:47 by bguyot            #+#    #+#             */
-/*   Updated: 2022/02/23 13:24:48 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/03/03 07:40:20 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,17 @@ char	*ft_strtrim(char const *s1, char const *set);
 ** without begining and end char that are present in set
 ** (NULL if allocation fails) */
 char	*ft_itoa(int n);
-/* Return the string representation of n (NULL if allocation fails) */
+/* Return the string representation of the integer n
+** (NULL if allocation fails) */
+char	*ft_utoa(unsigned int n);
+/* Return the string representation of unsigned integer n
+** (NULL if allocation fails) */
+char	*ft_utoa_base(unsigned int nb, char *base);
+/* Return the string representation of unsigned int n, in the given base
+** (NULL if allocation fails) */
+char	*ft_ultoa_base(unsigned long nb, char *base);
+/* Return the string representation of unsigned long n, in the given base
+** (NULL if allocation fails) */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 /* Allocate and return a string of f(i, s[i]) (NULL if allocation fails) */
 

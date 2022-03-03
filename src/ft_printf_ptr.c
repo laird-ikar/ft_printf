@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_printf_ptr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 13:24:04 by bguyot            #+#    #+#             */
-/*   Updated: 2022/03/02 14:09:42 by bguyot           ###   ########.fr       */
+/*   Created: 2022/03/02 10:39:59 by bguyot            #+#    #+#             */
+/*   Updated: 2022/03/03 07:17:13 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/ft_printf.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_printf_ptr(va_list args, int *count)
 {
-	const char	*s;
+	void	*ptr;
+	char	*str;
 
-	if (!str)
-		return (0);
-	s = str;
-	while (*s)
-		s++;
-	return (s - str);
+	ptr = va_arg(args, void *);
+	if (!ptr)
+	{
+		ft_putstr_fd("0x0", 1);
+		(*count) += 3;
+	}
+	else
+	{
+		str = ft_ultoa_base((unsigned long) ptr, "0123456789abcdef");
+		ft_putstr_fd("0x", 1);
+		ft_putstr_fd(str, 1);
+		*count += (2 + ft_strlen(str));
+		free(str);
+	}
 }

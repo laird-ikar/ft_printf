@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_printf_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 13:24:04 by bguyot            #+#    #+#             */
-/*   Updated: 2022/03/02 14:09:42 by bguyot           ###   ########.fr       */
+/*   Created: 2022/03/02 10:39:57 by bguyot            #+#    #+#             */
+/*   Updated: 2022/03/02 17:08:50 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/ft_printf.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_printf_str(va_list args, int *count)
 {
-	const char	*s;
+	char	*str;
 
+	str = va_arg(args, char *);
 	if (!str)
-		return (0);
-	s = str;
-	while (*s)
-		s++;
-	return (s - str);
+	{
+		ft_putstr_fd("(null)", 1);
+		(*count) += 6;
+	}
+	else
+	{
+		ft_putstr_fd(str, 1);
+		(*count) += ft_strlen(str);
+	}
 }

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_printf_uint.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 13:24:04 by bguyot            #+#    #+#             */
-/*   Updated: 2022/03/02 14:09:42 by bguyot           ###   ########.fr       */
+/*   Created: 2022/03/02 10:40:01 by bguyot            #+#    #+#             */
+/*   Updated: 2022/03/03 07:11:55 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/ft_printf.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_printf_uint(va_list args, int *count)
 {
-	const char	*s;
+	char	*str;
 
+	str = ft_utoa(va_arg(args, unsigned int));
 	if (!str)
-		return (0);
-	s = str;
-	while (*s)
-		s++;
-	return (s - str);
+		return ;
+	ft_putstr_fd(str, 1);
+	*count += ft_strlen(str);
+	free(str);
 }

@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_printf_percent.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 13:24:04 by bguyot            #+#    #+#             */
-/*   Updated: 2022/03/02 14:09:42 by bguyot           ###   ########.fr       */
+/*   Created: 2022/03/02 10:40:09 by bguyot            #+#    #+#             */
+/*   Updated: 2022/03/02 17:01:49 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/ft_printf.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_printf_percent(va_list args, int *count)
 {
-	const char	*s;
-
-	if (!str)
-		return (0);
-	s = str;
-	while (*s)
-		s++;
-	return (s - str);
+	(void) args;
+	ft_putchar_fd('%', 1);
+	(*count)++;
 }
