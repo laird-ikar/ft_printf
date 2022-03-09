@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_upper_xint.c                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 10:40:04 by bguyot            #+#    #+#             */
-/*   Updated: 2022/03/09 11:58:53 by bguyot           ###   ########.fr       */
+/*   Created: 2022/03/09 12:11:11 by bguyot            #+#    #+#             */
+/*   Updated: 2022/03/09 12:11:12 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "libft.h"
 
-void	ft_printf_upper_xint(va_list args, int *count)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	unsigned int	a;
-	char			*str;
+	int	i;
 
-	a = (unsigned int) va_arg(args, int);
-	str = ft_utoa_base(a, "0123456789ABCDEF");
-	ft_putstr_fd(str, 1);
-	*count += ft_strlen(str);
-	free(str);
+	i = 0;
+	while ((unsigned char) s1[i] && (unsigned char) s2[i]
+		&& (unsigned char) s1[i] == (unsigned char) s2[i])
+	{
+		i++;
+	}
+	return ((unsigned char) s1[i] - (unsigned char) s2[i]);
 }

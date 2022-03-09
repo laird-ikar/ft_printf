@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:24:47 by bguyot            #+#    #+#             */
-/*   Updated: 2022/03/03 07:40:20 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/03/09 12:22:40 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ int		ft_toupper(int c);
 /* Return the upper conterpart of c if c is a lower letter, c otherwise */
 int		ft_tolower(int c);
 /* Return the lower conterpart of c if c is a upper letter, c otherwise */
+int		ft_strcmp(const char *s1, const char *s2);
+/* Compare the strings s1 and s2, char by char
+** and return the first diffrence (is ascii value) */
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 /* Compare the at most n first chars of s1 and s2
 ** and return the first diffrence (is ascii value) */
@@ -55,6 +58,16 @@ int		ft_atoi(const char *str);
 /* Return the number representing by str, skiping the firsts white spaces */
 int		ft_lstsize(t_list *lst);
 /* Return the number of element of the list lst*/
+int		ft_strcontain(char **src, char *tofind);
+/* Return 1 if there is tofind in src, 0 other wise*/
+int		ft_tabmin(int *tab, size_t size);
+/* Return the minimum of the array */
+int		ft_tabmax(int *tab, size_t size);
+/* Return the minimum of the array */
+int		ft_tabmed(int *tab, int size);
+/* Return the med of the array */
+int		ft_abs(int a);
+/* Return absolute value of a */
 
 void	ft_bzero(void *s, size_t n);
 /* Fill n byte of memory, at the address of s with 0s */
@@ -102,7 +115,11 @@ void	*ft_memchr(const void *s, int c, size_t n);
 ** c in the n bytes of memory pointed by s */
 void	*ft_calloc(size_t count, size_t size);
 /* Allocate size byte of memeory and set them to 0
-** (return NULL is allocation fails) */
+** (return NULL if allocation fails) */
+void	*ft_memcat(const void *mem1, const void *mem2,
+			size_t len1, size_t len2);
+/* Allocate and return the contatenation of mem1 and mem2
+** (return NULL if allocation fails)*/
 
 char	*ft_strchr(const char *s, int c);
 /* Return the address of the first occurence of c in the string pointed by s */
@@ -142,6 +159,8 @@ t_list	*ft_lstnew(void *content);
 ** (NULL if allocation fails) */
 t_list	*ft_lstlast(t_list *lst);
 /* Return the lat element of a list */
+t_list	*ft_lstcalendar(const t_list *lst, size_t calendar);
+/* Return the calendarth element of lst */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 /* Return the list of the images of lst by f (NULL if allocation fails) */
 

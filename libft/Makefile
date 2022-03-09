@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:24:40 by bguyot            #+#    #+#              #
-#    Updated: 2022/03/03 07:40:37 by bguyot           ###   ########.fr        #
+#    Updated: 2022/03/09 12:24:05 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ ft_memmove.c ft_memset.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c		\
 ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c	\
 ft_substr.c ft_lstmap.c ft_lstnew.c ft_lstiter.c ft_lstlast.c ft_lstsize.c		\
 ft_lstclear.c ft_lstdelone.c ft_lstadd_back.c ft_lstadd_front.c ft_utoa.c		\
-ft_ultoa_base.c ft_utoa_base.c
+ft_ultoa_base.c ft_utoa_base.c ft_memcat.c ft_abs.c ft_lstcalendar.c ft_strcmp.c\
+ft_strcontain.c ft_tabmax.c ft_tabmin.c ft_tabmed.c
 OBJS 		= ${SRCS:.c=.o}
 CC			= gcc
 RM			= rm -f

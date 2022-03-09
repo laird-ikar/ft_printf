@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_upper_xint.c                             :+:      :+:    :+:   */
+/*   ft_memcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 10:40:04 by bguyot            #+#    #+#             */
-/*   Updated: 2022/03/09 11:58:53 by bguyot           ###   ########.fr       */
+/*   Created: 2022/03/09 07:46:52 by bguyot            #+#    #+#             */
+/*   Updated: 2022/03/09 07:58:03 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "libft.h"
 
-void	ft_printf_upper_xint(va_list args, int *count)
+void	*ft_memcat(const void *mem1, const void *mem2, size_t len1, size_t len2)
 {
-	unsigned int	a;
-	char			*str;
+	void	*res;
+	void	*ptr;
 
-	a = (unsigned int) va_arg(args, int);
-	str = ft_utoa_base(a, "0123456789ABCDEF");
-	ft_putstr_fd(str, 1);
-	*count += ft_strlen(str);
-	free(str);
+	res = ft_calloc(len1 + len2, 1);
+	if (!res)
+		return (NULL);
+	ptr = res;
+	while (len1--)
+		*(char *)(ptr++) = *(char *)(mem1++);
+	while (len2--)
+		*(char *)(ptr++) = *(char *)(mem2++);
+	return (res);
 }

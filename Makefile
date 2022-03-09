@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 13:18:47 by bguyot            #+#    #+#              #
-#    Updated: 2022/03/03 07:21:27 by bguyot           ###   ########.fr        #
+#    Updated: 2022/03/09 12:04:35 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS		= $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS		= $(SRCS:.c=.o)
 
 CC			= gcc
-CFLAG		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -f
 
 all: $(NAME)
