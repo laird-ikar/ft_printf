@@ -22,10 +22,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		return (NULL);
 	while (lst)
 	{
-		tmp = ft_lstnew(f(lst->content));
+		tmp = ft_lstnew(f(lst->cont));
 		ft_lstadd_back(res, tmp);
 		ft_lstdelone(tmp, del);
-		lst = lst->next;
+		lst = lst->nx;
 	}
 	return (*res);
 }

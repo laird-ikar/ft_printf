@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstcalendar.c                                   :+:      :+:    :+:   */
+/*   ft_lstmax.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 12:21:56 by bguyot            #+#    #+#             */
-/*   Updated: 2022/03/09 12:22:04 by bguyot           ###   ########.fr       */
+/*   Created: 2022/03/10 14:26:54 by bguyot            #+#    #+#             */
+/*   Updated: 2022/03/10 14:27:15 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstcalendar(const t_list *lst, size_t calendar)
+int	ft_lstmaxint(t_list *lst)
 {
-	if (!lst)
-		return (NULL);
-	while (calendar-- && lst->nx)
+	int	max;
+
+	max = -2147483648;
+	while (lst)
+	{
+		if (max < *(int *)lst->cont)
+		{
+			max = *(int *)lst->cont;
+		}
 		lst = lst->nx;
-	return ((t_list *) lst);
+	}
+	return (max);
 }

@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstcalendar.c                                   :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 12:21:56 by bguyot            #+#    #+#             */
-/*   Updated: 2022/03/09 12:22:04 by bguyot           ###   ########.fr       */
+/*   Created: 2022/03/10 10:36:33 by bguyot            #+#    #+#             */
+/*   Updated: 2022/03/10 10:36:54 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstcalendar(const t_list *lst, size_t calendar)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	if (!lst)
-		return (NULL);
-	while (calendar-- && lst->nx)
-		lst = lst->nx;
-	return ((t_list *) lst);
+	int	i;
+	int	j;
+	int	temp;
+
+	j = 0;
+	while (j < size)
+	{
+		i = 0;
+		while (i < size - 1 - j)
+		{
+			if (tab [i] > tab[i + 1])
+			{
+				temp = tab [i];
+				tab[i] = tab[i + 1];
+				tab[i + 1] = temp;
+			}
+			i++;
+		}
+		j++;
+	}
 }
