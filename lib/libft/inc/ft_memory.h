@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 08:45:41 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/28 09:46:27 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/11/28 12:41:08 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ void	*ft_calloc(size_t count, size_t size);
 /* Allocate and return the contatenation of mem1 and mem2
 ** (return NULL if allocation fails)*/
 void	*ft_memcat(
-	const void *mem1,
-	const void *mem2,
-	size_t len1,
-	size_t len2
-);
+			const void *mem1,
+			const void *mem2,
+			size_t len1,
+			size_t len2
+			);
 
 /* Compare the at most n first bytes of s1 and s2 and return
 ** the first diffrence */

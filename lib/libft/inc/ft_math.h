@@ -6,13 +6,12 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 08:41:40 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/28 08:43:51 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/11/28 12:42:11 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MATH_H
 # define FT_MATH_H
-
 
 /* Return absolute value of a */
 int	ft_abs(int a);

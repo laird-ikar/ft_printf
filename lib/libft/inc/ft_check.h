@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 08:37:24 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/28 08:38:53 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/11/28 12:40:30 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ int		ft_isascii(int c);
 
 /* Return true if c is a printable char, false otherwise */
 int		ft_isprint(int c);
-
 
 #endif

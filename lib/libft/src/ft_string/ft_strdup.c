@@ -6,12 +6,11 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:23:44 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/28 08:56:23 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/11/28 12:41:59 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/ft_string.h"
-
 
 char	*ft_strdup(const char *src)
 {
