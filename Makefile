@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+         #
+#    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 13:18:47 by bguyot            #+#    #+#              #
-#    Updated: 2022/03/09 12:04:35 by bguyot           ###   ########.fr        #
+#    Updated: 2022/11/28 12:47:26 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,10 @@ INCLUDE		= ./include/
 LIBFT		= ./libft/
 SRC_DIR		= ./src/
 
-SRC_FILES	= ft_printf.c ft_printf_int.c ft_printf_percent.c ft_printf_ptr.c\
-	ft_printf_str.c ft_printf_uint.c ft_printf_upper_xint.c ft_printf_xint.c\
-	ft_printf_chr.c
+SRC_FILES	= 	\
+	ft_printf
 
-SRCS		= $(addprefix $(SRC_DIR), $(SRC_FILES))
+SRCS		= $(addsuffix .c, $(addprefix $(SRC_DIR), $(SRC_FILES)))
 OBJS		= $(SRCS:.c=.o)
 
 CC			= gcc
