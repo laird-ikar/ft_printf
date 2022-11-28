@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 09:00:22 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/28 09:47:09 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/11/28 15:11:23 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ t_list	*ft_lstnew(void *cont);
 t_list	*ft_lstlast(t_list *lst);
 
 /* Return the calendarth element of lst */
-t_list	*ft_lstcalendar(const t_list *lst, size_t calendar);
+t_list	*ft_lstnnext(const t_list *lst, size_t n);
 
 /* Return the list of the images of lst by f (NULL if allocation fails) */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));

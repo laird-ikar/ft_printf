@@ -6,14 +6,14 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 13:18:47 by bguyot            #+#    #+#              #
-#    Updated: 2022/11/28 12:47:26 by bguyot           ###   ########.fr        #
+#    Updated: 2022/11/28 14:51:27 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libftprintf.a
 
 INCLUDE		= ./include/
-LIBFT		= ./libft/
+LIBFT		= ./lib/libft/
 SRC_DIR		= ./src/
 
 SRC_FILES	= 	\
@@ -44,7 +44,7 @@ fclean: clean
 re:	fclean all
 
 test: re
-	$(CC) $(FLAGS) -o test -L. -lftprintf test.c
+	$(CC) $(CFLAGS) -o test -L. -lftprintf test.c
 
 test_fclean: fclean
 	$(RM) test

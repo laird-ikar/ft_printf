@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:24:47 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/28 09:01:37 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/11/28 14:39:05 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 # include "inc/ft_memory.h"
 # include "inc/ft_put.h"
 # include "inc/ft_string.h"
+# include "inc/ft_list.h"
 
 #endif
