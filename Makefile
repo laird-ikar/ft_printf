@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 13:18:47 by bguyot            #+#    #+#              #
-#    Updated: 2022/11/29 08:12:57 by bguyot           ###   ########.fr        #
+#    Updated: 2022/11/29 08:59:24 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC_DIR		= ./src/
 SRC_FILES	= 			\
 	ft_printf			\
 	ft_parse			\
-	ft_split_modules	\
+	ft_split_module	\
 	ft_stringify
 
 SRCS		= $(addsuffix .c, $(addprefix $(SRC_DIR), $(SRC_FILES)))

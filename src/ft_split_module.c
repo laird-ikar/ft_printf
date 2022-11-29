@@ -6,14 +6,14 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:41:42 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/29 08:51:19 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/11/29 08:58:46 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/_ft_printf.h"
 
 /*
- *	ft_split_modules:
+ *	ft_split_module:
  *
  *	returns a pointer to a list of format tokens
  *
@@ -25,7 +25,7 @@
  *		returned value:	["bla bla bla "]->["%s"]->[" "]->["%-3d"]->[" bla bla"]
  *							->["%%"]->["%x"]->["%%"]
  */
-t_list	*ft_split_modules(const char *beg_str)
+t_list	*ft_split_module(const char *beg_str)
 {
 	const char	*end_str;
 	t_list		*ret;
