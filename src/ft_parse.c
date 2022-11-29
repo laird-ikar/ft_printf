@@ -6,16 +6,22 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:41:11 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/29 10:06:30 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/11/29 10:16:01 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/_ft_printf.h"
 
 /*
-**	on transforme toutes les boites qui commencent par %
-**	en le string que ca devrait etre
-*/
+ *	ft_parse
+ *
+ *	expends the tokens that must parsed
+ *
+ *	module:
+ *		list of all the tokens
+ *	args:
+ *		argument list
+ */
 void	ft_parse(t_list *module, va_list args)
 {
 	t_flag	flag;
@@ -27,9 +33,14 @@ void	ft_parse(t_list *module, va_list args)
 			module->content = expend_arg(args, flag);
 		module = module->next;
 	}
-	(void) args;
 }
 
+/*
+ *	get_flag
+ *
+ *	creates the flags structure of each token
+ *
+ */
 t_flag	get_flag(char *token)
 {
 	t_flag	ret;
