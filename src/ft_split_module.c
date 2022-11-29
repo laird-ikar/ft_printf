@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_modules.c                                 :+:      :+:    :+:   */
+/*   ft_split_module.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:41:42 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/29 08:58:46 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/11/29 10:08:16 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,4 @@ t_list	*ft_split_module(const char *beg_str)
 		end_str++;
 	}
 	return (ret);
-}
-
-/*
- *	is_conversion
- *
- *	check if a char is a conversion token or not
- *
- *	to_check:
- *		the char to check
- */
-int	is_conversion(char to_check)
-{
-	return ((int) ft_strchr(CONVERSIONS, to_check));
 }
