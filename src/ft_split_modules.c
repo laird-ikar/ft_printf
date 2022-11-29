@@ -6,54 +6,54 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:41:42 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/29 07:42:51 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/11/29 08:33:59 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/printf_helpers.h"
 
 /*
-**	fill modules avec les morceaux
-**	i.e. "bla bvla lda % 0 'fefiuf ejfiusr "
-**	[bla bvla lda ]
-**	[% 0x]
-**	[ fefiuf ejfiusr]
-*/
-// %d%%
-int	need_cut(const char *ft_format, int inside_flag)
+ *	ft_split_modules:
+ *
+ *	returns a pointer to a list of format tokens
+ *
+ *	format:
+ *		the format string to tokenise
+ *
+ *	e.g.
+ *		ft_format:		"bla bla bla %s %-3d bla bla%%%x%%"
+ *		returned value:	["bla bla bla "]->["%s"]->[" "]->["%-3d"]->[" bla bla"]
+ *							->["%%"]->["%x"]->["%%"]
+ */
+t_list	*ft_split_modules(const char *beg_str)
 {
-	if (inside_flag)
-	{
-		if (ft_strchr(CONVERSIONS, *ft_format))
-			return (1);
-		else
-			return (0);
-	}
-	else if (*(ft_format + 1) == '%')
-		return (1);
-	return (0);
-}
-
-t_list	*ft_split_modules(const char *ft_format)
-{
+	const char	*end_str;
 	t_list		*ret;
-	int			inside_flag;
-	const char	*ptr;
+	int			in_flag;
 
 	ret = NULL;
-	inside_flag = 0;
-	ptr = ft_format;
-	while (*ft_format)
+	end_str = beg_str;
+	in_flag = *beg_str == '%';
+	while (*end_str)
 	{
-		if (need_cut(ft_format, inside_flag))
+		if (
+			(in_flag && end_str != beg_str && is_conversion(*end_str))
+			|| (!in_flag && *(end_str + 1) == '%')
+		)
 		{
 			ft_lstadd_back(
 				&ret,
-				ft_lstnew(ft_strndup(ft_format, ft_format - ptr)));
-			ft_format++;
-			ptr = ft_format;
+				ft_lstnew(ft_strndup(beg_str, end_str - beg_str + 1))
+				);
+			in_flag = *(end_str + 1) == '%';
+			beg_str = end_str + 1;
 		}
-		ft_format++;
+		end_str++;
 	}
 	return (ret);
+}
+
+int	is_conversion(char to_check)
+{
+	return ((int) ft_strchr(CONVERSIONS, to_check));
 }

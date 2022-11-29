@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:34:46 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/29 07:44:48 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/11/29 08:30:26 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_flags	decompose_pur_flags(t_list module);
 **	FT_SPLIT_MODULE
 */
 t_list	*ft_split_modules(const char *ft_format);
-int		ft_is_flag(char c);
+int		is_conversion(char to_check);
 
 /*
 **	FT_STRINGIFY
