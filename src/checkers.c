@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 09:33:28 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/29 09:47:09 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/11/30 07:35:20 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  */
 int	is_conversion(char to_check)
 {
-	return ((int) ft_strchr(CONVERSIONS, to_check));
+	return ((ft_strchr(CONVERSIONS, to_check) != NULL));
 }
 
 /*
@@ -35,5 +35,5 @@ int	is_conversion(char to_check)
  */
 int	is_flag(char to_check)
 {
-	return ((int) ft_strchr(FLAGS, to_check));
+	return (ft_strchr(FLAGS, to_check) != NULL);
 }
