@@ -36,11 +36,11 @@ int		ft_lstmaxint(t_list *lst);
 /* Return the minimum value of lst, interpreted as int */
 int		ft_lstminint(t_list *lst);
 
-/* Add the new list at the begining of the list pointed by lst */
-void	ft_lstadd_front(t_list **lst, t_list *new);
+/* Add the new_lst list at the begining of the list pointed by lst */
+void	ft_lstadd_front(t_list **lst, t_list *new_lst);
 
-/* Add the new list at the end of the list pointed by lst */
-void	ft_lstadd_back(t_list **lst, t_list *new);
+/* Add the new_lst list at the end of the list pointed by lst */
+void	ft_lstadd_back(t_list **lst, t_list *new_lst);
 
 /* Free the memory of the cont of lst with del THEN free
 ** DO NOT free the nx element */
@@ -53,7 +53,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 /* Apply f to every element of lst */
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
-/* Create and return a new list with first element cont, and a NULL nx
+/* Create and return a new_lst list with first element cont, and a NULL nx
 ** (NULL if allocation fails) */
 t_list	*ft_lstnew(void *cont);
 

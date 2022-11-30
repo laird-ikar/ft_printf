@@ -12,9 +12,9 @@
 
 #include "../../inc/ft_list.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new_lst)
 {
-	if (!lst || !(*lst) || !new)
-	new->next = *lst;
-	*lst = new;
+	if (!lst || !(*lst) || !new_lst)
+	new_lst->next = *lst;
+	*lst = new_lst;
 }
