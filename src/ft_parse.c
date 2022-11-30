@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:41:11 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/29 10:16:01 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/11/30 07:43:40 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	ft_parse(t_list *module, va_list args)
  *
  *	creates the flags structure of each token
  *
+ *	token:
+ *		token to get flags from
  */
 t_flag	get_flag(char *token)
 {
@@ -64,6 +66,16 @@ t_flag	get_flag(char *token)
 	return (ret);
 }
 
+/*
+ *	parse_flag
+ *
+ *	edit the flags according to the character encontered
+ *
+ *	flag:
+ *		pointer to the flag structure
+ *	c:
+ *		character to calculate for
+ */
 void	parse_flag(t_flag *flag, char c)
 {
 	if (c == '#')
