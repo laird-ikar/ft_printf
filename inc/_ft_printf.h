@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:34:46 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/30 08:48:02 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/11/30 09:42:18 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 
 typedef struct s_flag
 {
-	char	conv_type;
-	char	padding_type;
-	char	positive_sign;
-	int		do_alt_form;
-	int		min_width;
-	int		precision;
+	int	conv_type;
+	int	padding_type;
+	int	positive_sign;
+	int	do_alt_form;
+	int	min_width;
+	int	precision;
 }	t_flag;
 
 # endif

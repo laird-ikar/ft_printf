@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:42:03 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/29 10:11:47 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/11/30 10:00:06 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,11 @@ char	*ft_stringify(t_list *token)
 	while (token)
 	{
 		tmp = ret;
-		ret = ft_strjoin(tmp, token->content);
+		ret = ft_memcat(
+				tmp,
+				((t_buf) token->content)->data,
+				((t_buf) token->content)->size
+				);
 		free(tmp);
 		token = token->next;
 	}
