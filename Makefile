@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 13:18:47 by bguyot            #+#    #+#              #
-#    Updated: 2022/11/30 08:51:40 by bguyot           ###   ########.fr        #
+#    Updated: 2022/11/30 14:18:11 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRC_FILES	= 			\
 	parsers/percent		\
 	parsers/s			\
 	parsers/u			\
-	parsers/x			
+	parsers/x
 
 SRCS		= $(addsuffix .c, $(addprefix $(SRC_DIR), $(SRC_FILES)))
 OBJS		= $(SRCS:.c=.o)
@@ -42,10 +42,10 @@ RM			= rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT)libft.a
+$(NAME): $(OBJS) libft.a
 	ar rcs $(NAME) $(OBJS)
 
-$(LIBFT)libft.a:
+libft.a:
 	$(MAKE) -C $(LIBFT)
 	mv $(LIBFT)libft.a $(NAME)
 
