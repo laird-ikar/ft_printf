@@ -22,7 +22,7 @@
  */
 int	is_conversion(char to_check)
 {
-	return ((ft_strchr(CONVERSIONS, to_check) != NULL));
+	return ((ft_strchr(FT_CONVERSIONS, to_check) != NULL));
 }
 
 /*
@@ -35,5 +35,5 @@ int	is_conversion(char to_check)
  */
 int	is_flag(char to_check)
 {
-	return (ft_strchr(FLAGS, to_check) != NULL);
+	return (ft_strchr(FT_FLAGS, to_check) != NULL);
 }

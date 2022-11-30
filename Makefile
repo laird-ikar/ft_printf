@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 13:18:47 by bguyot            #+#    #+#              #
-#    Updated: 2022/11/29 10:08:45 by bguyot           ###   ########.fr        #
+#    Updated: 2022/11/30 08:51:40 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,16 @@ SRC_FILES	= 			\
 	ft_split_module		\
 	ft_stringify		\
 	checkers			\
-	expend_arg
+	expend_arg			\
+	parsers/c			\
+	parsers/d			\
+	parsers/great_x		\
+	parsers/i			\
+	parsers/p			\
+	parsers/percent		\
+	parsers/s			\
+	parsers/u			\
+	parsers/x			
 
 SRCS		= $(addsuffix .c, $(addprefix $(SRC_DIR), $(SRC_FILES)))
 OBJS		= $(SRCS:.c=.o)
