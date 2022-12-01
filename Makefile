@@ -6,15 +6,15 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 13:18:47 by bguyot            #+#    #+#              #
-#    Updated: 2022/12/01 08:57:04 by bguyot           ###   ########.fr        #
+#    Updated: 2022/12/01 08:58:29 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= libftprintf.a
+NAME		=	libftprintf.a
 
-INCLUDE		= ./include/
-LIBFT		= ./lib/libft/
-SRC_DIR		= ./src/
+INCLUDE		=	./include/
+LIBFT		=	./lib/libft/
+SRC_DIR		=	./src/
 
 SRC_FILES	= 			\
 	ft_printf			\
@@ -33,12 +33,12 @@ SRC_FILES	= 			\
 	parsers/u			\
 	parsers/x
 
-SRCS		= $(addsuffix .c, $(addprefix $(SRC_DIR), $(SRC_FILES)))
-OBJS		= $(SRCS:.c=.o)
+SRCS		=	$(addsuffix .c, $(addprefix $(SRC_DIR), $(SRC_FILES)))
+OBJS		=	$(SRCS:.c=.o)
 
-CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror
-RM			= rm -f
+CC			=	gcc
+CFLAGS		=	-Wall -Wextra -Werror
+RM			=	rm -f
 
 all: $(NAME)
 
@@ -59,7 +59,7 @@ fclean: clean
 
 re:	fclean all
 
-test: re
+test: $(NAME)
 	$(CC) $(CFLAGS) -o test -L. -lftprintf test.c
 
 test_fclean: fclean

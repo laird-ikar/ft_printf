@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 08:50:10 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/01 08:51:37 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/01 09:16:58 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 t_buff	p(va_list lst, t_flag flag)
 {
 	t_buff	ret;
-	int		data;
+	char	*number;
+	void	*data;
 
-	data = va_arg(lst, int);
-	ret.data = ft_itoa(data);
+	data = va_arg(lst, void *);
+	number = ft_ultoa_base((unsigned long) data, "0123456789abcdef");
+	ret.data = ft_strjoin("0x", number);
+	free (number);
 	ret.len = ft_strlen(ret.data);
 	return (ret);
 	(void) flag;
