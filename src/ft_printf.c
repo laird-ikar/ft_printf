@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:47:50 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/01 08:44:06 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/01 09:39:37 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	ft_printf(const char *ft_format, ...)
 	ft_parse(module, args);
 	out = ft_stringify(module);
 	write(1, out.data, out.len);
+	ft_lstclear(&module, *ft_bufclear);
 	free(out.data);
 	return (out.len);
 }
