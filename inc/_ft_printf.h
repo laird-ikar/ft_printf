@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:34:46 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/30 09:42:18 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/01 08:41:34 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_flag
 # ifndef T_PARSE
 #  define T_PARSE
 
-typedef char	*(t_parse)(va_list, t_flag);
+typedef	t_buff	(t_parse)(va_list, t_flag);
 
 # endif
 
@@ -55,26 +55,31 @@ void	parse_flag(t_flag *flag_struct, char flag_char);
 /*
  *	EXPEND_ARG
  */
-char	*expend_arg(va_list args, t_flag flag);
-char	*u(va_list args, t_flag flag);
-char	*x(va_list args, t_flag flag);
-char	*i(va_list args, t_flag flag);
-char	*p(va_list args, t_flag flag);
-char	*d(va_list args, t_flag flag);
-char	*s(va_list args, t_flag flag);
-char	*c(va_list args, t_flag flag);
-char	*percent(va_list args, t_flag flag);
-char	*great_x(va_list args, t_flag flag);
+t_buff	expend_arg(va_list args, t_flag flag);
+t_buff	u(va_list args, t_flag flag);
+t_buff	x(va_list args, t_flag flag);
+t_buff	i(va_list args, t_flag flag);
+t_buff	p(va_list args, t_flag flag);
+t_buff	d(va_list args, t_flag flag);
+t_buff	s(va_list args, t_flag flag);
+t_buff	c(va_list args, t_flag flag);
+t_buff	percent(va_list args, t_flag flag);
+t_buff	great_x(va_list args, t_flag flag);
 
 /*
  *	FT_SPLIT_MODULE
  */
 t_list	*ft_split_module(const char *ft_format);
+void	add_buffer_to_list(
+			t_list *lst,
+			const char *beg_str,
+			const char *end_str
+			);
 
 /*
  *	FT_STRINGIFY
  */
-char	*ft_stringify(t_list *module);
+t_buff	ft_stringify(t_list *token);
 
 /*
  *	CHECKERS

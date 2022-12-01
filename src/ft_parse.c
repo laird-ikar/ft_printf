@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:41:11 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/30 07:43:40 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/01 08:44:34 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	ft_parse(t_list *module, va_list args)
 
 	while (module)
 	{
-		flag = get_flag(module->content);
+		flag = get_flag(((t_buff *) module->content)->data);
 		if (flag.conv_type)
-			module->content = expend_arg(args, flag);
+			((t_buff *) module->content)->data = expend_arg(args, flag).data;
 		module = module->next;
 	}
 }

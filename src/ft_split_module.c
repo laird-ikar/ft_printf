@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:41:42 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/29 10:08:16 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/01 08:44:45 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,27 @@ t_list	*ft_split_module(const char *beg_str)
 			|| (!in_flag && *(end_str + 1) == '%')
 		)
 		{
-			ft_lstadd_back(
-				&ret,
-				ft_lstnew(ft_strndup(beg_str, end_str - beg_str + 1))
-				);
+			add_buffer_to_list(ret, beg_str, end_str);
 			in_flag = *(end_str + 1) == '%';
 			beg_str = end_str + 1;
 		}
 		end_str++;
 	}
 	return (ret);
+}
+
+void	add_buffer_to_list(
+	t_list *lst,
+	const char *beg_str,
+	const char *end_str
+	)
+{
+	t_buff	*buf_to_add;
+	char	*tmp;
+
+	buf_to_add = ft_calloc(1, sizeof(t_buff));
+	tmp = ft_strndup(beg_str, end_str - beg_str + 1);
+	*buf_to_add = ft_atobuf(tmp);
+	free(tmp);
+	ft_lstadd_back(&lst, ft_lstnew(buf_to_add));
 }

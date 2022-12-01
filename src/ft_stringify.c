@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:42:03 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/30 10:00:06 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/01 08:43:55 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,17 @@
  *	token:
  *		token list to transform in string
  */
-char	*ft_stringify(t_list *token)
+t_buff	ft_stringify(t_list *token)
 {
-	char	*ret;
-	char	*tmp;
+	t_buff	ret;
+	t_buff	tmp;
 
-	ret = ft_calloc(1, sizeof(char));
+	ft_bzero(&ret, sizeof (t_buff));
 	while (token)
 	{
 		tmp = ret;
-		ret = ft_memcat(
-				tmp,
-				((t_buf) token->content)->data,
-				((t_buf) token->content)->size
-				);
-		free(tmp);
+		ret = ft_bufcat(ret, *((t_buff *) token->content));
+		ft_bufclear(&tmp);
 		token = token->next;
 	}
 	return (ret);

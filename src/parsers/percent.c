@@ -6,15 +6,17 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 08:50:15 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/30 08:50:20 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/01 08:32:17 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/_ft_printf.h"
 
-char	*percent(va_list lst, t_flag flag)
+t_buff	percent(va_list lst, t_flag flag)
 {
-	return (NULL);
-	(void) lst;
+	t_buff	ret;
+
+	return (ret);
 	(void) flag;
+	(void) lst;
 }
