@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:24:40 by bguyot            #+#    #+#              #
-#    Updated: 2022/12/01 08:06:55 by bguyot           ###   ########.fr        #
+#    Updated: 2022/12/01 09:33:27 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,7 +121,8 @@ FT_BUFF_DIR		=	src/ft_buff/
 FT_BUFF_FIL		=	\
 	ft_bufcat		\
 	ft_bufclear
-
+FT_BUFF_SRC	=	\
+	$(addsuffix .c, $(addprefix $(FT_BUFF_DIR), $(FT_BUFF_FIL)))
 # FT_GNL_DIR	=	src/get_next_line/
 # FT_GNL_FIL	=	\
 # 	get_next_line
@@ -137,17 +138,8 @@ SRCS =				\
 	$(FT_MEMORY_SRC)	\
 	$(FT_PUT_SRC)		\
 	$(FT_STRING_SRC)	\
-	$(FT_GNL_SRC)
-DIRS =					\
-	$(FT_ARR_DIR)		\
-	$(FT_CAST_DIR)		\
-	$(FT_CHECK_DIR)		\
-	$(FT_LIST_DIR)		\
-	$(FT_MATH_DIR)		\
-	$(FT_MEMORY_DIR)	\
-	$(FT_PUT_DIR)		\
-	$(FT_STRING_DIR)	\
-	$(FT_GNL_DIR)
+	$(FT_GNL_SRC)		\
+	$(FT_BUFF_SRC)
 
 OBJS 			= $(SRCS:.c=.o)
 
