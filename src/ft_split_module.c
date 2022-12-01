@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:41:42 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/01 16:46:25 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/01 17:43:22 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_list	*ft_split_module(const char *beg_str)
 	{
 		if (
 			(in_flag && end_str != beg_str && is_conversion(*end_str))
-			|| (!in_flag && *(end_str + 1) == '%')
+			|| (!in_flag && (*(end_str + 1) == '%' || *(end_str + 1) == '\0'))
 		)
 		{
 			add_buffer_to_list(&ret, beg_str, end_str);
