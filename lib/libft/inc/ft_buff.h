@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 07:42:27 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/01 08:05:43 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/01 08:40:12 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,11 @@ typedef struct s_buffer
 }	t_buff;
 
 # endif
+
+/* concatenante two buffers (new data is allocated) */
+t_buff	ft_bufcat(t_buff a, t_buff b);
+
+/* free data and set len to 0 */
+void	ft_bufclear(t_buff *buf);
 
 #endif
