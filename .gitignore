@@ -1,10 +1,9 @@
 *.a
 *.o
-test
+test*
 .DS_Store
 pft/
 42TESTERS-PRINTF/
 pft_2019/
 printfTester/
-test.c
 .ccls-cache

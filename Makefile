@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 13:18:47 by bguyot            #+#    #+#              #
-#    Updated: 2022/12/01 09:41:34 by bguyot           ###   ########.fr        #
+#    Updated: 2022/12/01 10:03:44 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC_FILES	= 			\
 	ft_stringify		\
 	checkers			\
 	expend_arg			\
+	free_buff			\
 	parsers/c			\
 	parsers/d			\
 	parsers/great_x		\
@@ -59,14 +60,8 @@ fclean: clean
 re:	fclean all
 
 test: $(NAME)
-	$(CC) $(CFLAGS) -o test -L. -lftprintf test.c
-
-test_fclean: fclean
+	$(CC) $(CFLAGS) -g -o test -L. -lftprintf test.c
+	valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes ./test
 	$(RM) test
 
-test_re: test_fclean test
-
-check_leaks:
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./test
-
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re test

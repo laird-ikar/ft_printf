@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   free_buff.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 12:47:50 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/01 10:03:20 by bguyot           ###   ########.fr       */
+/*   Created: 2022/12/01 10:01:33 by bguyot            #+#    #+#             */
+/*   Updated: 2022/12/01 10:02:38 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/_ft_printf.h"
 
-int	ft_printf(const char *ft_format, ...)
+void	free_buff(void *buff)
 {
-	t_list	*module;
-	t_buff	out;
-	va_list	args;
-
-	if (ft_strlen(ft_format) == 0)
-		return (0);
-	va_start(args, ft_format);
-	module = ft_split_module(ft_format);
-	ft_parse(module, args);
-	out = ft_stringify(module);
-	write(1, out.data, out.len);
-	ft_lstclear(&module, *free_buff);
-	free(out.data);
-	return (out.len);
+	ft_bufclear((t_buff *) buff);
+	free(buff);
 }

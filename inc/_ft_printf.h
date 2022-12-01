@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:34:46 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/01 08:41:34 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/01 10:03:15 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,10 @@ t_buff	ft_stringify(t_list *token);
  */
 int		is_conversion(char to_check);
 int		is_flag(char to_check);
+
+/*
+ *	FREE_BUFF
+ */
+void	free_buff(void *buff);
+
 #endif
