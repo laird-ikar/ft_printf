@@ -6,13 +6,12 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 13:18:47 by bguyot            #+#    #+#              #
-#    Updated: 2022/12/01 08:58:29 by bguyot           ###   ########.fr        #
+#    Updated: 2022/12/01 09:41:34 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	libftprintf.a
 
-INCLUDE		=	./include/
 LIBFT		=	./lib/libft/
 SRC_DIR		=	./src/
 
@@ -66,5 +65,8 @@ test_fclean: fclean
 	$(RM) test
 
 test_re: test_fclean test
+
+check_leaks:
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./test
 
 .PHONY:	all clean fclean re
