@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:41:42 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/01 09:59:16 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/01 16:46:25 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_list	*ft_split_module(const char *beg_str)
 			|| (!in_flag && *(end_str + 1) == '%')
 		)
 		{
-			add_buffer_to_list(ret, beg_str, end_str);
+			add_buffer_to_list(&ret, beg_str, end_str);
 			in_flag = *(end_str + 1) == '%';
 			beg_str = end_str + 1;
 		}
@@ -51,17 +51,16 @@ t_list	*ft_split_module(const char *beg_str)
 }
 
 void	add_buffer_to_list(
-	t_list *lst,
-	const char *beg_str,
-	const char *end_str
-	)
+			t_list **lst,
+			const char *beg_str,
+			const char *end_str
+			)
 {
 	t_buff	*buf_to_add;
 	char	*tmp;
 
-	buf_to_add = ft_calloc(1, sizeof(t_buff));
 	tmp = ft_strndup(beg_str, end_str - beg_str + 1);
-	*buf_to_add = ft_atobuf(tmp);
+	buf_to_add = ft_atobuf(tmp);
 	free(tmp);
-	ft_lstadd_back(&lst, ft_lstnew(buf_to_add));
+	ft_lstadd_back(lst, ft_lstnew(buf_to_add));
 }

@@ -6,11 +6,12 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 07:46:52 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/28 08:52:09 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/01 17:17:25 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/ft_memory.h"
+#include <unistd.h>
 
 void	*ft_memcat(const void *mem1, const void *mem2, size_t len1, size_t len2)
 {
@@ -21,9 +22,9 @@ void	*ft_memcat(const void *mem1, const void *mem2, size_t len1, size_t len2)
 	if (!res)
 		return (NULL);
 	ptr = res;
-	while (len1--)
+	while (len1-- && mem1)
 		*(char *)(ptr++) = *(char *)(mem1++);
-	while (len2--)
+	while (len2-- && mem2)
 		*(char *)(ptr++) = *(char *)(mem2++);
 	return (res);
 }

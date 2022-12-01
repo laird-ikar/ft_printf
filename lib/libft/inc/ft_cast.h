@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 08:32:38 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/01 08:15:57 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/01 16:14:21 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 
 /* Return a buffer with the same content than str */
-t_buff	ft_atobuf(char *str);
+t_buff	*ft_atobuf(char *str);
 
 #endif

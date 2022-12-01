@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:47:50 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/01 10:03:20 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/01 17:32:03 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_printf(const char *ft_format, ...)
 {
 	t_list	*module;
-	t_buff	out;
+	t_buff	*out;
 	va_list	args;
 
 	if (ft_strlen(ft_format) == 0)
@@ -24,8 +24,9 @@ int	ft_printf(const char *ft_format, ...)
 	module = ft_split_module(ft_format);
 	ft_parse(module, args);
 	out = ft_stringify(module);
-	write(1, out.data, out.len);
-	ft_lstclear(&module, *free_buff);
-	free(out.data);
-	return (out.len);
+	ft_lstclear(&module, *ft_bufclear);
+	write(1, out->data, out->len);
+	ft_bufclear(out);
+	va_end(args);
+	return (out->len);
 }
