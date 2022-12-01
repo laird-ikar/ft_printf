@@ -6,13 +6,13 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:24:40 by bguyot            #+#    #+#              #
-#    Updated: 2022/11/29 07:46:41 by bguyot           ###   ########.fr        #
+#    Updated: 2022/12/01 08:06:55 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 			= libft.a
 
-FT_ARR_DIR		= src/ft_arr/
+FT_ARR_DIR		=	src/ft_arr/
 FT_ARR_FIL		=	\
 	ft_sort_int_tab	\
 	ft_tabmax		\
@@ -21,7 +21,7 @@ FT_ARR_FIL		=	\
 FT_ARR_SRC		=	\
 	$(addsuffix .c, $(addprefix $(FT_ARR_DIR), $(FT_ARR_FIL)))
 
-FT_CAST_DIR		= src/ft_cast/
+FT_CAST_DIR		=	src/ft_cast/
 FT_CAST_FIL		=	\
 	ft_tolower		\
 	ft_toupper		\
@@ -29,11 +29,12 @@ FT_CAST_FIL		=	\
 	ft_itoa			\
 	ft_utoa			\
 	ft_utoa_base	\
-	ft_ultoa_base
+	ft_ultoa_base	\
+	ft_atobuf
 FT_CAST_SRC		=	\
 	$(addsuffix .c, $(addprefix $(FT_CAST_DIR), $(FT_CAST_FIL)))
 
-FT_CHECK_DIR	= src/ft_check/
+FT_CHECK_DIR	=	src/ft_check/
 FT_CHECK_FIL	=	\
 	ft_isalnum		\
 	ft_isalpha		\
@@ -44,7 +45,7 @@ FT_CHECK_FIL	=	\
 FT_CHECK_SRC	=	\
 	$(addsuffix .c, $(addprefix $(FT_CHECK_DIR), $(FT_CHECK_FIL)))
 
-FT_LIST_DIR		= src/ft_list/
+FT_LIST_DIR		=	src/ft_list/
 FT_LIST_FIL		=	\
 	ft_lstadd_back	\
 	ft_lstadd_front	\
@@ -61,7 +62,7 @@ FT_LIST_FIL		=	\
 FT_LIST_SRC		=	\
 	$(addsuffix .c, $(addprefix $(FT_LIST_DIR), $(FT_LIST_FIL)))
 
-FT_MATH_DIR		= src/ft_math/
+FT_MATH_DIR		=	src/ft_math/
 FT_MATH_FIL		=	\
 	ft_abs			\
 	ft_max			\
@@ -70,7 +71,7 @@ FT_MATH_FIL		=	\
 FT_MATH_SRC		=	\
 	$(addsuffix .c, $(addprefix $(FT_MATH_DIR), $(FT_MATH_FIL)))
 
-FT_MEMORY_DIR	= src/ft_memory/
+FT_MEMORY_DIR	=	src/ft_memory/
 FT_MEMORY_FIL	=	\
 	ft_bzero		\
 	ft_calloc		\
@@ -83,7 +84,7 @@ FT_MEMORY_FIL	=	\
 FT_MEMORY_SRC	=	\
 	$(addsuffix .c, $(addprefix $(FT_MEMORY_DIR), $(FT_MEMORY_FIL)))
 
-FT_PUT_DIR		= src/ft_put/
+FT_PUT_DIR		=	src/ft_put/
 FT_PUT_FIL		=	\
 	ft_putchar_fd	\
 	ft_putendl_fd	\
@@ -93,7 +94,7 @@ FT_PUT_FIL		=	\
 FT_PUT_SRC		=	\
 	$(addsuffix .c, $(addprefix $(FT_PUT_DIR), $(FT_PUT_FIL)))
 
-FT_STRING_DIR	= src/ft_string/
+FT_STRING_DIR	=	src/ft_string/
 FT_STRING_FIL	=	\
 	ft_split		\
 	ft_strchr		\
@@ -116,7 +117,12 @@ FT_STRING_FIL	=	\
 FT_STRING_SRC	=	\
 	$(addsuffix .c, $(addprefix $(FT_STRING_DIR), $(FT_STRING_FIL)))
 
-# FT_GNL_DIR	= src/get_next_line/
+FT_BUFF_DIR		=	src/ft_buff/
+FT_BUFF_FIL		=	\
+	ft_bufcat		\
+	ft_bufclear
+
+# FT_GNL_DIR	=	src/get_next_line/
 # FT_GNL_FIL	=	\
 # 	get_next_line
 # FT_GNL_SRC	=	\
