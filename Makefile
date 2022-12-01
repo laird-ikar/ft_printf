@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 13:18:47 by bguyot            #+#    #+#              #
-#    Updated: 2022/11/30 14:18:11 by bguyot           ###   ########.fr        #
+#    Updated: 2022/12/01 08:57:04 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,12 +42,12 @@ RM			= rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJS) libft.a
+$(NAME): $(OBJS) $(LIBFT)libft.a
+	cp $(LIBFT)libft.a $(NAME)
 	ar rcs $(NAME) $(OBJS)
 
-libft.a:
+$(LIBFT)libft.a:
 	$(MAKE) -C $(LIBFT)
-	mv $(LIBFT)libft.a $(NAME)
 
 clean:
 	$(MAKE) clean -C $(LIBFT)
