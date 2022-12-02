@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   p.c                                                :+:      :+:    :+:   */
+/*   ft_strgen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 08:50:10 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/02 09:47:04 by bguyot           ###   ########.fr       */
+/*   Created: 2022/12/02 14:30:15 by bguyot            #+#    #+#             */
+/*   Updated: 2022/12/02 16:34:23 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/_ft_printf.h"
+#include "../../inc/ft_string.h"
 
-t_buff	*p(va_list lst, t_flag *flag)
+char	*ft_strgen(char c, int n)
 {
-	t_buff	*ret;
-	char	*number;
-	void	*data;
+	char	*ret;
 
-	ret = ft_calloc(1, sizeof (t_buff));
-	data = va_arg(lst, void *);
-	number = ft_ultoa_base((unsigned long) data, "0123456789abcdef");
-	ret->data = ft_strjoin("0x", number);
-	free (number);
-	ret->len = ft_strlen(ret->data);
+	ret = ft_calloc(n + 1, sizeof (char));
+	ft_memset(ret, c, n);
 	return (ret);
-	(void) flag;
 }

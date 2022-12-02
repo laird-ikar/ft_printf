@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 08:26:05 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/28 09:49:01 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/02 16:35:06 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,8 @@ char	**ft_split(char const *s, char c);
 
 /* Return 1 if there is tofind in src, 0 other wise*/
 int		ft_strcontain(char **src, char *tofind);
+
+/* Create a new 0 terminated string of char */
+char	*ft_strgen(char c, int n);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 10:06:19 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/01 16:46:09 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/02 17:28:25 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ static t_parse	*g_parser[] = {
 };
 /**/
 
-t_buff	*expend_arg(va_list args, t_flag flag)
+t_buff	*expend_arg(va_list args, t_flag *flag)
 {
 	t_buff	*ret;
 
-	ret = g_parser[flag.conv_type](args, flag);
+	ret = g_parser[flag->conv_type](args, flag);
+	apply_width(ret, flag->min_width, flag->padding_type);
 	return (ret);
 }

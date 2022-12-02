@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:24:40 by bguyot            #+#    #+#              #
-#    Updated: 2022/12/02 09:52:08 by bguyot           ###   ########.fr        #
+#    Updated: 2022/12/02 17:27:31 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,7 +114,8 @@ FT_STRING_FIL	=	\
 	ft_strrchr		\
 	ft_strtrim		\
 	ft_substr		\
-	ft_tabjoin
+	ft_tabjoin		\
+	ft_strgen
 FT_STRING_SRC	=	\
 	$(addsuffix .c, $(addprefix $(FT_STRING_DIR), $(FT_STRING_FIL)))
 
