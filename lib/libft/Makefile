@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:24:40 by bguyot            #+#    #+#              #
-#    Updated: 2022/12/01 09:33:27 by bguyot           ###   ########.fr        #
+#    Updated: 2022/12/02 09:52:08 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,8 @@ FT_MATH_FIL		=	\
 	ft_abs			\
 	ft_max			\
 	ft_min			\
-	ft_sqrt
+	ft_sqrt			\
+	ft_sign
 FT_MATH_SRC		=	\
 	$(addsuffix .c, $(addprefix $(FT_MATH_DIR), $(FT_MATH_FIL)))
 
