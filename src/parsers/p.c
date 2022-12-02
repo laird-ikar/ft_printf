@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 08:50:10 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/01 16:38:02 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/02 09:40:10 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ t_buff	*p(va_list lst, t_flag flag)
 	ret->data = ft_strjoin("0x", number);
 	free (number);
 	ret->len = ft_strlen(ret->data);
+	apply_width(ret, flag.min_width, flag.padding_type);
 	return (ret);
-	(void) flag;
 }

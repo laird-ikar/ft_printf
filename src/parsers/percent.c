@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 08:50:15 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/01 16:38:17 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/02 09:40:07 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_buff	*percent(va_list lst, t_flag flag)
 	data = "%";
 	ret->data = ft_strdup(data);
 	ret->len = ft_strlen(ret->data);
+	apply_width(ret, flag.min_width, flag.padding_type);
 	return (ret);
-	(void) flag;
 	(void) lst;
 }
