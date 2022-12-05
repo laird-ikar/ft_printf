@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:34:46 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/05 08:46:23 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/05 09:44:55 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ t_buff	*great_x(va_list args, t_flag *flag);
 void	apply_width(t_buff *str, t_flag *flag);
 void	create_padding(t_buff segment[5], t_flag *flag, int padding_space);
 void	create_sign(t_buff segment[5], t_flag *flag);
+t_buff	concat_segment(t_buff segment[5]);
 
 /*
  *	FT_SPLIT_MODULE

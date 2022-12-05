@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 13:18:47 by bguyot            #+#    #+#              #
-#    Updated: 2022/12/05 08:50:56 by bguyot           ###   ########.fr        #
+#    Updated: 2022/12/05 09:57:20 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ fclean: clean
 re:	fclean all
 
 test: $(NAME) test.c
-	$(CC) $(CFLAGS) -fsanitize=address -g -o test -L. -lftprintf test.c
-	# valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./test
+	$(CC) $(CFLAGS) -g -o test -L. -lftprintf test.c
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./test
 
 .PHONY:	all clean fclean re
