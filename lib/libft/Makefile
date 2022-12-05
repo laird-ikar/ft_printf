@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:24:40 by bguyot            #+#    #+#              #
-#    Updated: 2022/12/02 17:27:31 by bguyot           ###   ########.fr        #
+#    Updated: 2022/12/05 08:56:27 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,7 +81,8 @@ FT_MEMORY_FIL	=	\
 	ft_memcmp		\
 	ft_memcpy		\
 	ft_memmove		\
-	ft_memset
+	ft_memset		\
+	ft_memdup	
 FT_MEMORY_SRC	=	\
 	$(addsuffix .c, $(addprefix $(FT_MEMORY_DIR), $(FT_MEMORY_FIL)))
 
@@ -122,7 +123,8 @@ FT_STRING_SRC	=	\
 FT_BUFF_DIR		=	src/ft_buff/
 FT_BUFF_FIL		=	\
 	ft_bufcat		\
-	ft_bufclear
+	ft_bufclear		\
+	ft_bufcpy
 FT_BUFF_SRC	=	\
 	$(addsuffix .c, $(addprefix $(FT_BUFF_DIR), $(FT_BUFF_FIL)))
 # FT_GNL_DIR	=	src/get_next_line/

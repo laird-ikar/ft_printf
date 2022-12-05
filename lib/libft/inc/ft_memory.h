@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 08:45:41 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/28 12:41:08 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/05 08:56:15 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,10 @@ void	*ft_memcat(
 /* Compare the at most n first bytes of s1 and s2 and return
 ** the first diffrence */
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+
+/*
+ *	Create and allocate a new spot of memory with the same data
+ */
+void	*ft_memdup(void *src, size_t len);
 
 #endif
