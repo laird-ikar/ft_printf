@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 09:03:34 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/06 08:24:01 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/06 09:22:48 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ void	apply_width(t_buff *buff, t_flag *flag)
 
 	segment[1].data = ft_memdup(buff->data, buff->len);
 	segment[1].len = buff->len;
-	padding_space = ft_max(0, flag->min_width - buff->len - ft_abs(flag->sign));
+	padding_space = ft_max(
+			0,
+			flag->min_width - buff->len - ft_abs(flag->sign) - flag->zero_prec
+			);
 	create_padding(segment, flag, padding_space);
 	create_sign(segment, flag);
 	ret = concat_segment(segment);
@@ -55,12 +58,9 @@ t_buff	concat_segment(t_buff segment[5])
 
 void	create_padding(t_buff segment[5], t_flag *flag, int padding_space)
 {
-	segment[0].data = NULL;
-	segment[0].len = 0;
-	segment[4].data = NULL;
-	segment[4].len = 0;
-	segment[2].data = NULL;
-	segment[2].len = 0;
+	ft_bzero(&segment[0], sizeof (t_buff));
+	ft_bzero(&segment[2], sizeof (t_buff));
+	ft_bzero(&segment[4], sizeof (t_buff));
 	if (flag->padding_type == 0)
 	{
 		segment[4].data = ft_strgen(' ', padding_space);
@@ -74,6 +74,11 @@ void	create_padding(t_buff segment[5], t_flag *flag, int padding_space)
 	else if (flag->padding_type == '0')
 	{
 		segment[2].data = ft_strgen('0', padding_space);
+		segment[2].len = ft_strlen(segment[2].data);
+	}
+	if (flag->zero_prec)
+	{
+		segment[2].data = ft_strgen('0', flag->zero_prec);
 		segment[2].len = ft_strlen(segment[2].data);
 	}
 }

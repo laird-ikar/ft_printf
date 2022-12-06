@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:43:37 by bguyot            #+#    #+#             */
-/*   Updated: 2022/11/29 09:38:29 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/06 08:26:10 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
+# include <limits.h>
 # include "../lib/libft/libft.h"
 
 int		ft_printf(const char *str, ...)

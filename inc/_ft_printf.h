@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:34:46 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/05 09:44:55 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/06 09:20:33 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_flag
 	int	min_width;
 	int	precision;
 	int	sign;
+	int	zero_prec;
 }	t_flag;
 
 # endif
@@ -62,6 +63,7 @@ t_buff	*x(va_list args, t_flag *flag);
 t_buff	*i(va_list args, t_flag *flag);
 t_buff	*p(va_list args, t_flag *flag);
 t_buff	*d(va_list args, t_flag *flag);
+void	update_flag(t_flag *flag, int data, t_buff *ret);
 t_buff	*s(va_list args, t_flag *flag);
 t_buff	*c(va_list args, t_flag *flag);
 t_buff	*percent(va_list args, t_flag *flag);
