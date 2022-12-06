@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 09:27:34 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/06 09:29:58 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/06 12:44:01 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ void	update_zero_flag(t_flag *flag, t_buff *ret)
 		if (flag->padding_type == '0')
 			flag->padding_type = 0;
 		flag->zero_prec = flag->precision - ft_strlen(ret->data);
+		if (flag->zero_prec < 0)
+			flag->zero_prec = 0;
 	}
 }

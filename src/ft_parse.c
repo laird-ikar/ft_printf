@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:41:11 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/02 17:26:38 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/06 10:05:42 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,9 @@ void	parse_flag(t_flag *flag, char c)
 		flag->do_alt_form = 1;
 	else if (c == '+')
 		flag->positive_sign = '+';
-	else if (c == ' ')
+	else if (c == ' ' && !(flag->positive_sign == '+'))
 		flag->positive_sign = ' ';
-	else if (c == '0')
+	else if (c == '0' && !(flag->padding_type == '-'))
 		flag->padding_type = '0';
 	else if (c == '-')
 		flag->padding_type = '-';

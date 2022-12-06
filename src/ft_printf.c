@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:47:50 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/05 09:29:57 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/06 09:53:42 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_printf(const char *ft_format, ...)
 	int		ret;
 	va_list	args;
 
-	if (ft_strlen(ft_format) == 0)
+	if (!ft_strlen(ft_format))
 		return (0);
 	va_start(args, ft_format);
 	module = ft_split_module(ft_format);

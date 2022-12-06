@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 08:49:35 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/06 09:40:12 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/06 12:56:28 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,13 @@ t_buff	*great_x(va_list lst, t_flag *flag)
 		free(ret->data);
 		ret->data = tmp;
 	}
-	ret->len = ft_strlen(ret->data);
 	update_zero_flag(flag, ret);
+	if (data == 0 && flag->precision == 0)
+	{
+		tmp = ft_strdup("");
+		free(ret->data);
+		ret->data = tmp;
+	}
+	ret->len = ft_strlen(ret->data);
 	return (ret);
 }
