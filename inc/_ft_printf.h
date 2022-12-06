@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:34:46 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/06 09:29:54 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/06 13:30:58 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef	t_buff	*(t_parse)(va_list, t_flag*);
 # endif
 
 # ifndef FT_CONVERSIONS
-#  define FT_CONVERSIONS "uxXipd%sc"
+#  define FT_CONVERSIONS "uxXipd%scf"
 # endif
 
 # ifndef FT_FLAGS
@@ -65,6 +65,7 @@ t_buff	*p(va_list args, t_flag *flag);
 t_buff	*d(va_list args, t_flag *flag);
 t_buff	*s(va_list args, t_flag *flag);
 t_buff	*c(va_list args, t_flag *flag);
+t_buff	*f(va_list args, t_flag *flag);
 t_buff	*percent(va_list args, t_flag *flag);
 t_buff	*great_x(va_list args, t_flag *flag);
 void	apply_width(t_buff *str, t_flag *flag);

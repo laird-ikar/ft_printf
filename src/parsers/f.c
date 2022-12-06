@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   expend_arg.c                                       :+:      :+:    :+:   */
+/*   f.c                                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 10:06:19 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/06 13:30:20 by bguyot           ###   ########.fr       */
+/*   Created: 2022/12/06 13:21:40 by bguyot            #+#    #+#             */
+/*   Updated: 2022/12/06 13:30:53 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/_ft_printf.h"
+#include "../../inc/_ft_printf.h"
 
-/*\*/
-static t_parse	*g_parser[] = {
-	['u'] = *(u),
-	['x'] = *(x),
-	['X'] = *(great_x),
-	['i'] = *(i),
-	['p'] = *(p),
-	['d'] = *(d),
-	['%'] = *(percent),
-	['s'] = *(s),
-	['c'] = *(c),
-	['f'] = *(f)
-};
-/**/
-
-t_buff	*expend_arg(va_list args, t_flag *flag)
+t_buff	*f(va_list lst, t_flag *flag)
 {
+	double	data;
 	t_buff	*ret;
 
-	ret = g_parser[flag->conv_type](args, flag);
-	apply_width(ret, flag);
+	ret = ft_calloc(1, sizeof (t_buff));
+	ret->data = ft_strdup("(not implemented)");
+	ret->len = ft_strlen(ret->data);
+	data = va_arg(lst, double);
 	return (ret);
+	(void) flag;
 }

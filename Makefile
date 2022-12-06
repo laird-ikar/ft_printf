@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 13:18:47 by bguyot            #+#    #+#              #
-#    Updated: 2022/12/06 09:57:30 by bguyot           ###   ########.fr        #
+#    Updated: 2022/12/06 13:26:48 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRC_FILES	= 			\
 	parsers/s			\
 	parsers/u			\
 	parsers/x			\
+	parsers/f			\
 	parsers/apply_width	\
 	parsers/update_flag
 
