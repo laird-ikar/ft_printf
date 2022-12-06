@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 07:34:46 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/06 09:20:33 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/06 09:29:54 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ t_buff	*x(va_list args, t_flag *flag);
 t_buff	*i(va_list args, t_flag *flag);
 t_buff	*p(va_list args, t_flag *flag);
 t_buff	*d(va_list args, t_flag *flag);
-void	update_flag(t_flag *flag, int data, t_buff *ret);
 t_buff	*s(va_list args, t_flag *flag);
 t_buff	*c(va_list args, t_flag *flag);
 t_buff	*percent(va_list args, t_flag *flag);
@@ -72,6 +71,8 @@ void	apply_width(t_buff *str, t_flag *flag);
 void	create_padding(t_buff segment[5], t_flag *flag, int padding_space);
 void	create_sign(t_buff segment[5], t_flag *flag);
 t_buff	concat_segment(t_buff segment[5]);
+void	update_flag(t_flag *flag, int data, t_buff *ret);
+void	update_zero_flag(t_flag *flag, t_buff *ret);
 
 /*
  *	FT_SPLIT_MODULE

@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 09:03:34 by bguyot            #+#    #+#             */
-/*   Updated: 2022/12/06 09:22:48 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/12/06 09:24:55 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	create_padding(t_buff segment[5], t_flag *flag, int padding_space)
 		segment[2].data = ft_strgen('0', padding_space);
 		segment[2].len = ft_strlen(segment[2].data);
 	}
-	if (flag->zero_prec)
+	if (flag->zero_prec > 0)
 	{
 		segment[2].data = ft_strgen('0', flag->zero_prec);
 		segment[2].len = ft_strlen(segment[2].data);

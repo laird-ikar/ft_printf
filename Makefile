@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 13:18:47 by bguyot            #+#    #+#              #
-#    Updated: 2022/12/06 08:15:25 by bguyot           ###   ########.fr        #
+#    Updated: 2022/12/06 09:29:24 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRC_FILES	= 			\
 	parsers/u			\
 	parsers/x			\
 	parsers/apply_width	\
+	parsers/update_flag
 
 SRCS		=	$(addsuffix .c, $(addprefix $(SRC_DIR), $(SRC_FILES)))
 OBJS		=	$(SRCS:.c=.o)
