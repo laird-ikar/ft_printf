@@ -6,11 +6,11 @@
 #    By: bguyot <bguyot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:24:40 by bguyot            #+#    #+#              #
-#    Updated: 2022/12/05 08:56:27 by bguyot           ###   ########.fr        #
+#    Updated: 2022/12/08 08:07:12 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 			= libft.a
+NAME 			=	libft.a
 
 FT_ARR_DIR		=	src/ft_arr/
 FT_ARR_FIL		=	\
@@ -82,7 +82,7 @@ FT_MEMORY_FIL	=	\
 	ft_memcpy		\
 	ft_memmove		\
 	ft_memset		\
-	ft_memdup	
+	ft_memdup
 FT_MEMORY_SRC	=	\
 	$(addsuffix .c, $(addprefix $(FT_MEMORY_DIR), $(FT_MEMORY_FIL)))
 
@@ -125,7 +125,7 @@ FT_BUFF_FIL		=	\
 	ft_bufcat		\
 	ft_bufclear		\
 	ft_bufcpy
-FT_BUFF_SRC	=	\
+FT_BUFF_SRC	=		\
 	$(addsuffix .c, $(addprefix $(FT_BUFF_DIR), $(FT_BUFF_FIL)))
 # FT_GNL_DIR	=	src/get_next_line/
 # FT_GNL_FIL	=	\
@@ -134,36 +134,45 @@ FT_BUFF_SRC	=	\
 # 	$(addsuffix .c, $(addprefix $(FT_GNL_DIR), $(FT_GNL_FIL)))
 
 SRCS =				\
-	$(FT_ARR_SRC)		\
-	$(FT_CAST_SRC)		\
-	$(FT_CHECK_SRC)		\
-	$(FT_LIST_SRC)		\
-	$(FT_MATH_SRC)		\
-	$(FT_MEMORY_SRC)	\
-	$(FT_PUT_SRC)		\
-	$(FT_STRING_SRC)	\
-	$(FT_GNL_SRC)		\
+	$(FT_ARR_SRC)	\
+	$(FT_CAST_SRC)	\
+	$(FT_CHECK_SRC)	\
+	$(FT_LIST_SRC)	\
+	$(FT_MATH_SRC)	\
+	$(FT_MEMORY_SRC)\
+	$(FT_PUT_SRC)	\
+	$(FT_STRING_SRC)\
+	$(FT_GNL_SRC)	\
 	$(FT_BUFF_SRC)
 
-OBJS 			= $(SRCS:.c=.o)
+OBJS 			=	$(SRCS:.c=.o)
 
-CC				= @gcc
-RM				= @rm -rf
-CFLAGS			= -Wall -Wextra -Werror
+CC				=	@gcc
+RM				=	@rm -rf
+CFLAGS			=	-Wall -Wextra -Werror
+
+OBJ_COLOR		=	"\e[38;5;147m"
+CLN_COLOR		=	"\e[38;5;124m"
+BIN_COLOR		=	"\e[38;5;129m"
 
 all: $(NAME)
 
-test:
-	@echo $(OBJS)
-
 $(NAME):	$(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@printf "\e[95m\tLibft \t\t[ ✓ ]\n\e[39m"
+	@printf $(BIN_COLOR)"\t"$(NAME)"\t\t\t\t[ ✓ ]\n\e[0m"
+
+%.o: %.c
+	@$(CC) $(CFLAGS) -c -o $@ $<
+	@printf $(OBJ_COLOR)"\t"$@"\n\e[0m"
 
 clean:
 	$(RM) $(OBJS)
+	@printf $(CLN_COLOR)"\tclean "$(NAME)" objects\t\t[ ✓ ]\n\e[0m"
 
 fclean: clean
 	$(RM) $(NAME)
+	@printf $(CLN_COLOR)"\tclean "$(NAME)" binary\t\t[ ✓ ]\n\e[0m"
 
 re: fclean all
+
+.PHONY:	all clean fclean re
