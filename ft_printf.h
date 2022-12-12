@@ -15,7 +15,7 @@
 
 # include <stdarg.h>
 # include <limits.h>
-# include "../lib/libft/libft.h"
+# include "lib/libft/libft.h"
 
 int		ft_printf(const char *str, ...)
 		__attribute__ ((format (printf, 1, 2)));

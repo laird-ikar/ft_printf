@@ -13,7 +13,7 @@
 #ifndef _FT_PRINTF_H
 # define _FT_PRINTF_H
 
-# include "ft_printf.h"
+# include "../ft_printf.h"
 
 # ifndef T_FLAG
 #  define T_FLAG
